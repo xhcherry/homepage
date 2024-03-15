@@ -1,4 +1,4 @@
-console.log('%cCopyright © 2024 zyyo.net',
+console.log('%cCopyright © 2021 xherry.com',
     'background-color: #ff00ff; color: white; font-size: 24px; font-weight: bold; padding: 10px;'
 );
 console.log('%c   /\\_/\\', 'color: #8B4513; font-size: 20px;');
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function changeTheme(theme) {
 
-        tanChiShe.src = "/static/svg/snake-" + theme + ".svg";
+        tanChiShe.src = "/static/svg/snake-Dark.svg";
         //切换贪吃蛇
         html.dataset.theme = theme;
         //设置css变量主题
@@ -178,9 +178,9 @@ document.addEventListener('DOMContentLoaded', function () {
             requestAnimationFrame(step);
         };
 
-        appendFps = function (fpsValue) {
-            fpsElement.textContent = 'FPS: ' + fpsValue;
-        };
+        // appendFps = function (fpsValue) {
+        //     fpsElement.textContent = 'FPS: ' + fpsValue;
+        // };
 
         step();
     })();

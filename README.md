@@ -1,0 +1,1 @@
+![](assets/github-contribution-grid-snake.gif)
