@@ -1,19 +1,18 @@
-console.log('%cCopyright © 2021 xherry.com', 'background-color: #ff00ff; color: white; font-size: 24px; font-weight: bold; padding: 10px;');
+console.log('%cCopyright © 2021 xherry.com');
 console.log('%c 1', 'color: #8B4513; font-size: 20px;');
-
 document.addEventListener('contextmenu', function (event) {
     event.preventDefault(); // 阻止默认的上下文菜单行为
 });
 
 function toggleClass(selector, className) {
-    var elements = document.querySelectorAll(selector);
+    const elements = document.querySelectorAll(selector);
     elements.forEach(function (element) {
         element.classList.toggle(className);
     });
 }
 
 function wx(imageURL) {
-    var tcMainElement = document.querySelector(".tc-img");
+    const tcMainElement = document.querySelector(".tc-img");
     if (imageURL) {
         tcMainElement.src = imageURL;
     }
@@ -27,26 +26,27 @@ function left() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var themeState = getCookie("themeState") || "Blue";
+    let themeState = getCookie("themeState") || "Blue";
     const htmlTag = document.querySelector('html');
-    var svgItems = document.getElementsByTagName("svg");
-    var tanChiShe = document.getElementById("tanChiShe");
+    const svgItems = document.getElementsByTagName("svg");
+    const tanChiShe = document.getElementById("tanChiShe");
+
     function changeSvg(color) {
-        for (var i = 0; i < svgItems.length; i++) {
-            var paths = svgItems[i].getElementsByTagName("path");
-            for (var j = 0; j < paths.length; j++) {
+        for (let i = 0; i < svgItems.length; i++) {
+            const paths = svgItems[i].getElementsByTagName("path");
+            for (let j = 0; j < paths.length; j++) {
                 paths[j].setAttribute("fill", color);
             }
         }
     }
 
     function changeTheme(theme) {
-        if (theme == "Dark") {
+        if (theme === "Dark") {
             themeState = "Dark";
             changeSvg("#ffffff");
             tanChiShe.src = "static/svg/snake.svg";
-            htmlTag.dataset.theme = 'dack';
-        } else if (theme == "Blue") {
+            htmlTag.dataset.theme = 'dark';
+        } else if (theme === "Blue") {
             themeState = "Blue";
             changeSvg("#000000");
             tanChiShe.src = "static/svg/snake.svg";
@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function setCookie(name, value, days) {
-        var expires = "";
+        let expires = "";
         if (days) {
-            var date = new Date();
+            const date = new Date();
             date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
             expires = "; expires=" + date.toUTCString();
         }
@@ -66,14 +66,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function getCookie(name) {
-        var nameEQ = name + "=";
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i];
-            while (cookie.charAt(0) == ' ') {
+        const nameEQ = name + "=";
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
                 cookie = cookie.substring(1, cookie.length);
             }
-            if (cookie.indexOf(nameEQ) == 0) {
+            if (cookie.indexOf(nameEQ) === 0) {
                 return cookie.substring(nameEQ.length, cookie.length);
             }
         }
@@ -88,29 +88,24 @@ document.addEventListener('DOMContentLoaded', function () {
         switchCheckbox.checked = false;
         changeTheme('Dark');
     }
-
     switchCheckbox.addEventListener('change', function () {
-        if (themeState == "Dark") {
-
+        if (themeState === "Dark") {
             changeTheme("Blue");
-
-        } else if (themeState == "Blue") {
-
+        } else if (themeState === "Blue") {
             changeTheme("Dark");
         }
     });
-
-    if (themeState == "Dark") {
+    if (themeState === "Dark") {
         switchCheckbox.checked = false;
     }
     changeTheme(themeState);
-
     /*淡入效果*/
-    var projectItems = document.querySelectorAll(".projectItem");
+    const projectItems = document.querySelectorAll(".projectItem");
+
     function checkProjectItems() {
-        for (var i = 0; i < projectItems.length; i++) {
-            var projectItem = projectItems[i];
-            var projectItemTop = projectItem.getBoundingClientRect().top;
+        for (let i = 0; i < projectItems.length; i++) {
+            const projectItem = projectItems[i];
+            const projectItemTop = projectItem.getBoundingClientRect().top;
 
             if (projectItemTop < window.innerHeight * 1.2) {
                 projectItem.classList.add("fade-in-visible");
@@ -120,10 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener("scroll", checkProjectItems);
     window.addEventListener("resize", checkProjectItems);
-
     /*加载效果*/
-    var pageLoading = document.querySelector("#PageLoading");
-    var center = document.getElementById("PageLoading-zyyo-center");
+    const pageLoading = document.querySelector("#PageLoading");
+    const center = document.getElementById("PageLoading-zyyo-center");
     setTimeout(function () {
         checkProjectItems();
         pageLoading.style.opacity = '0';
@@ -132,5 +126,4 @@ document.addEventListener('DOMContentLoaded', function () {
         center.style.opacity = "0";
         pageLoading.style.backgroundSize = "200%";
     }, 300);
-
 });
