@@ -1,9 +1,5 @@
-console.log('%cCopyright © 2024 zyyo.net', 'background-color: #ff00ff; color: white; font-size: 24px; font-weight: bold; padding: 10px;');
-console.log('%c   /\\_/\\', 'color: #8B4513; font-size: 20px;');
-console.log('%c  ( o.o )', 'color: #8B4513; font-size: 20px;');
-console.log(' %c  > ^ <', 'color: #8B4513; font-size: 20px;');
-console.log('  %c /  ~ \\', 'color: #8B4513; font-size: 20px;');
-console.log('  %c/______\\', 'color: #8B4513; font-size: 20px;');
+console.log('%cCopyright © 2021 xherry.com', 'background-color: #ff00ff; color: white; font-size: 24px; font-weight: bold; padding: 10px;');
+console.log('%c 1', 'color: #8B4513; font-size: 20px;');
 
 document.addEventListener('contextmenu', function (event) {
     event.preventDefault(); // 阻止默认的上下文菜单行为
@@ -48,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (theme == "Dark") {
             themeState = "Dark";
             changeSvg("#ffffff");
-            tanChiShe.src = "https://raw.githubusercontent.com/xhcherry/homepage/output/github-contribution-grid-snake-dark.svg";
+            tanChiShe.src = "https://raw.githubusercontent.com/xhcherry/homepage/output/github-contribution-grid-snake.svg";
             htmlTag.dataset.theme = 'dack';
         } else if (theme == "Blue") {
             themeState = "Blue";
