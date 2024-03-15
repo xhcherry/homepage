@@ -1,1 +1,1 @@
-![](assets/github-contribution-grid-snake.gif)
+![](assets/github-contribution-grid-snake.svg)
