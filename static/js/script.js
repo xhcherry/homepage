@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (theme == "Dark") {
             themeState = "Dark";
             changeSvg("#ffffff");
-            tanChiShe.src = "https://raw.githubusercontent.com/xhcherry/homepage/output/github-contribution-grid-snake.svg";
+            tanChiShe.src = "static/svg/snake.svg";
             htmlTag.dataset.theme = 'dack';
         } else if (theme == "Blue") {
             themeState = "Blue";
             changeSvg("#000000");
-            tanChiShe.src = "https://raw.githubusercontent.com/xhcherry/homepage/output/github-contribution-grid-snake.svg";
+            tanChiShe.src = "static/svg/snake.svg";
             htmlTag.dataset.theme = '';
         }
         setCookie("themeState", theme, 365);
