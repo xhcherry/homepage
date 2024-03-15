@@ -1,4 +1,4 @@
-console.log('%cCopyright © 2021 xherry.com',
+console.log('%cCopyright © 2024 zyyo.net',
     'background-color: #ff00ff; color: white; font-size: 24px; font-weight: bold; padding: 10px;'
 );
 console.log('%c   /\\_/\\', 'color: #8B4513; font-size: 20px;');
@@ -97,10 +97,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var svgItems = document.getElementsByTagName("svg");
     var tanChiShe = document.getElementById("tanChiShe");
 
-
     function changeTheme(theme) {
 
-        tanChiShe.src = "/static/svg/snake-Dark.svg";
+        tanChiShe.src = "https://raw.githubusercontent.com/xhcherry/homepage/output/github-contribution-grid-snake.svg";
         //切换贪吃蛇
         html.dataset.theme = theme;
         //设置css变量主题
